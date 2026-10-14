@@ -1,0 +1,140 @@
+/* HTML: <html> width 700px fijo para que se vea igual en todos los dispositivos (mala práctica). / Comentar para ver como se adapta a la pantalla. */
+/* REGLA DE TRES: (hijo_px / padre_contenido_px) * 100 = % */
+
+* {
+  box-sizing: content-box;
+}
+
+html {
+  width: 700px;
+  background-color: #0f0;
+} /* padre=viewport / hijo=700px (100%) */
+
+body {
+  width: 85.71%; /* padre html=700px → 600px */
+  padding: 2.86%; /* padre html=700px → 20px */
+  margin: 2.86%; /* padre html=700px → 20px */
+  display: block;
+  font-family: Arial, sans-serif;
+  background-color: #eef2f7;
+  color: #3a4556;
+}
+
+form {
+  width: 80%; /* padre body=600px → 480px */
+  margin: 0 6.33%; /* padre body=600px → 38px */
+  padding: 3.33%; /* padre body=600px → 20px */
+  display: flow-root;
+  border: 2px solid #dfe7ef;
+  border-radius: 12px;
+  box-shadow: 0px 8px 24px rgba(90, 110, 140, 0.08);
+  background-color: #fff;
+}
+
+h1 {
+  width: 62.5%; /* padre form=480px → 300px */
+  margin: 0 18.75%; /* padre form=480px → 90px */
+  padding: 2.08% 0; /* padre form=480px → 10px */
+  display: block;
+  text-align: center;
+  border: 0;
+}
+
+form fieldset:nth-of-type(2),
+form fieldset:nth-of-type(3) {
+  width: 41.67%; /* padre form=480px → 200px */
+  margin: 0 4.17% 3.13% 4.17%; /* padre form=480px → 0 20px 15px 20px */
+  display: block;
+  float: left;
+  padding: 0;
+  border: 0;
+}
+
+fieldset {
+  width: 72.92%; /* padre form=480px → 350px */
+  padding: 0 13.54%; /* padre form=480px → 65px */
+  margin: 0 0 3.13% 0; /* padre form=480px → 15px */
+  display: block;
+  border: 0;
+}
+
+label,
+legend {
+  /* sin width: 100% del fieldset padre */
+  margin: 0 0 1.04% 0; /* padre fieldset=480px/200px → 5px aprox */
+  padding: 2.08%; /* padre fieldset=480px/200px → 10px */
+  display: block;
+  border: 1px solid #dfe7ef;
+  border-radius: 4px;
+  background-color: #f4f7fb;
+}
+
+legend ~ label {
+  width: 159%; /* padre fieldset flotado=200px → 318px */
+  padding: 5%; /* padre fieldset flotado=200px → 10px */
+  margin: 5% 0; /* padre fieldset flotado=200px → 10px */
+  display: block;
+  border: 1px solid #d4dde8;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px rgba(90, 110, 140, 0.08);
+  background-color: #fbfdff;
+}
+
+select {
+  width: 79.43%; /* padre fieldset general=350px → 278px */
+  padding: 2.86%; /* padre fieldset general=350px → 10px */
+  display: inline-block;
+  border: 1px solid #d4dde8;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px rgba(90, 110, 140, 0.08);
+  margin: 0;
+  background-color: #fbfdff;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 4.57%; /* padre fieldset general=350px → 16px */
+  height: 4.57%; /* padre fieldset general=350px → 16px */
+  margin: 0 2.86% 0 0; /* padre fieldset general=350px → 10px */
+  display: inline;
+  vertical-align: middle;
+}
+
+input[type="text"] {
+  width: 22.29%; /* padre fieldset general=350px → 78px */
+  padding: 2.86%; /* padre fieldset general=350px → 10px */
+  display: inline-block;
+  border: 1px solid #d4dde8;
+  border-radius: 8px;
+  box-shadow: 0px 1px 3px rgba(90, 110, 140, 0.08);
+  margin: 0;
+  background-color: #fbfdff;
+}
+
+textarea {
+  width: 96.57%; /* padre fieldset general=350px → 338px */
+  height: 22.86%; /* padre fieldset general=350px → 80px */
+  padding: 2.86%; /* padre fieldset general=350px → 10px */
+  display: inline-block;
+  border: 1px solid #d4dde8;
+  border-radius: 10px;
+  box-shadow: 0px 1px 3px rgba(90, 110, 140, 0.08);
+  margin: 0;
+  background-color: #fbfdff;
+  vertical-align: middle;
+  resize: none;
+}
+
+input[type="submit"] {
+  width: 22.5%; /* padre form=480px → 108px */
+  height: 5.83%; /* padre form=480px → 28px */
+  padding: 1.04%; /* padre form=480px → 5px */
+  margin: 2.08% 0 0 0; /* padre form=480px → 10px */
+  display: inline-block;
+  border: 1px solid #5b7a99;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(91, 122, 153, 0.2);
+  background-color: #5b7a99;
+  color: #fff;
+  cursor: pointer;
+}
